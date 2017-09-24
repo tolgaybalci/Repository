@@ -34,18 +34,26 @@ public class Repository<T> {
 		this.description = description;
 	}
 
-	public class softRepository {
+	public class SoftRepository {
 
 		public void save(T t) {
 
 			savedEntities.add(t);
 			System.out.println("Kaydetme işlemi gerçekleştirildi.");
 		}
+		
+		public void softDelete(T t) {
+			delete(t);
+		}
+		
+		public void softPrint() {
+			printElements();
+		}
 	}
 
-	public void delete() {
+	public void delete(T t) {
 		// TODO Auto-generated method stub
-
+		savedEntities.remove(t);
 		System.out.println("Silme işlemi gerçekleştirildi.");
 	}
 

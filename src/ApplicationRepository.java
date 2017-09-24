@@ -3,16 +3,18 @@ public class ApplicationRepository {
 
 	public static void main(String[] args) {
 		
-		Repository repository = new Repository();
+		Repository<String> repository = new Repository();
 		
-		Repository.softRepository softRepository = repository.new softRepository();
+		Repository<String>.SoftRepository softRepository = repository.new SoftRepository();
 		
-		repository.delete(); 
+		String firstString = "Hey";
 		
-		softRepository.save(softRepository);
+		softRepository.save(firstString);
 		
+		softRepository.softPrint();
 		
+		softRepository.softDelete(firstString);
 		
-		
+		softRepository.softPrint();
 	}
 }
